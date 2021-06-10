@@ -8,7 +8,7 @@ class GetJson(GetDatabase):
     def __init__(self):
         self.json_object = {}
     
-    def getDatabase(self, database_location = "Database/Database_Player/database.json") :
+    def getDatabase(self, database_location) :
         a_file = open(database_location, "r")
         json_object = json.load(a_file)
         a_file.close()
@@ -18,7 +18,7 @@ class GetYAML(GetDatabase):
     def __init__(self):
         self.yaml_object = {}
     
-    def getDatabase(self, database_location = "Database/Database_Sprite/player.yml") :
+    def getDatabase(self, database_location) :
         a_file = open(database_location, "r")
         yaml_object = yaml.safe_load(a_file)
         a_file.close()
@@ -32,7 +32,7 @@ class DumpJson(DumpDatabase):
     def __init__(self):
         pass
 
-    def dumpDatabase(self, json_object, database_location = "Database/Database_Player/database.json") :
+    def dumpDatabase(self, json_object, database_location) :
         a_file = open(database_location, "w")
         json.dump(json_object, a_file)
         a_file.close()
@@ -41,7 +41,7 @@ class DumpYaml(DumpDatabase):
     def __init__(self):
         pass
 
-    def dumpDatabase(self, yaml_object, database_location = "Database/Database_Sprite/player.yml") :
+    def dumpDatabase(self, yaml_object, database_location) :
         a_file = open(database_location, "w")
         yaml.dump(yaml_object, a_file)
         a_file.close()
@@ -53,7 +53,7 @@ class AddJson(AddDatabase) :
     def __init__(self):
         pass
 
-    def addDatabase(self, key, data, database_location = "Database/Database_Player/database.json"):
+    def addDatabase(self, key, data, database_location):
         
         getJson = GetJson()
         json_object = getJson.getDatabase(database_location)
@@ -69,7 +69,7 @@ class AddYaml(AddDatabase) :
     def __init__(self):
         pass
 
-    def addDatabase(self, key, data, database_location = "Database/Database_Sprite/player.yml"):
+    def addDatabase(self, key, data, database_location):
         
         getYaml = GetYAML()
         yaml_object = getYaml.getDatabase(database_location)
@@ -89,7 +89,7 @@ class DelJson(DelDatabase) :
     def __init__(self):
         pass
 
-    def delDatabase(self, key, database_location = "Database/Database_Player/database.json"):
+    def delDatabase(self, key, database_location):
         
         getJson = GetJson()
         json_object = getJson.getDatabase(database_location)
@@ -104,7 +104,7 @@ class DelYaml(DelDatabase) :
     def __init__(self):
         pass
 
-    def delDatabase(self, key, database_location = "Database/Database_Sprite/player.yml"):
+    def delDatabase(self, key, database_location):
         
         getYaml = GetYAML()
         yaml_object = getYaml.getDatabase(database_location)
