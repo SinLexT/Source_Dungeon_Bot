@@ -1,0 +1,9 @@
+person:
+  fname : ""
+  mname : ""
+  name : ""
+  gender : ""
+  clan : ""
+  level : 0
+  exp : 0
+  nextLevel : 100

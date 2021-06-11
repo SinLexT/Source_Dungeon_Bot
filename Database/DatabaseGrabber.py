@@ -73,7 +73,7 @@ class AddYaml(AddDatabase) :
         
         getYaml = GetYAML()
         yaml_object = getYaml.getDatabase(database_location)
-        if yaml_object is '' or yaml_object is None:
+        if yaml_object == '' or yaml_object == None:
             yaml_object = {}
         yaml_object[key] = data
         dumpYaml = DumpYaml()
